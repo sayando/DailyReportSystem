@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Tutorial of JPA</title>
+</head>
+<body>
+    <h1>従業員情報 詳細ページ</h1>
+    <form action="#" method="post" th:action="@{/employee/detail}">
+        <table th:object="${employee}">
+            <tr><th>社員番号</th><td><input type="text" name="employee_id" th:value="*{employee_id}" th:field="*{employee_id}"></td></tr>
+            <tr><th>氏名</th><td><input type="text" name="name" th:value="*{name}" th:field="*{name}"> </td></tr>
+            <tr><th>権限</th><td><input type="text" name="role" th:value="*{role}" th:field="*{role}"></td></tr>
+        </table>
+        <button type="submit">送信</button>
+        <a th:href="@{/employee/list}">一覧に戻る</a>
+    </form>
+</body>
+</html>
