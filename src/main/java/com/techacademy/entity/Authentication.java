@@ -14,7 +14,7 @@ import lombok.Data;
 
 @Data //Lombokのアノテーションです。「getter/setter、toString、hashCode、equals」のメソッドを生成します。
 @Entity
-@Table(name = "Authentication")
+@Table(name = "authentication")
 public class Authentication {
 
     /** 権限用の列挙型 */

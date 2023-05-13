@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -7,22 +6,24 @@
 </head>
 <body>
     <h1>従業員一覧</h1>
+    <a th:href="@{/employee/register}">User登録</a>
     <table>
+       <thead>
         <tr>
             <th>社員番号</th>
             <th>氏名</th>
             <th>操作</th>
         </tr>
-        <tr th:each="data : ${employeelist}">
-            <!-- th:eachとして使用されている場合はdataを利用して情報を表示-->
-            <span th:text="${data.authentication.employee_id}"></span>
-            <span th:text="${data.employee.name}"></span>
-            <span th:text="${data.authentication.role}"></span>
-            <td>
-                <a th:href="@{/country/detail/{code}/(code=${data.code})}">詳細を見る</a>
-            </td>
+        </thead>
+        <tbody>
+        <tr th:each="employee : ${employeelist}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.name}"></td>
+            <td><a th:href="@{/employee/detail/{id}/(id=${employee.id})}">詳細を見る</a></td>
         </tr>
+        </tbody>
     </table>
-    <a th:href="@{/country/register/{code}/(code=${data.code})}">新規従業員の登録</a>
+    <p th:text="'全' + ${employeelist.size()} + '件'"></p>
+    <a th:href="@{/employee/register}">新規従業員の登録</a>
 </body>
 </html>

@@ -10,7 +10,6 @@ import com.techacademy.service.AuthenticationService;
 @RequestMapping("Authentication")
 public class AuthenticationController {
     private final AuthenticationService service;
-
     public AuthenticationController(AuthenticationService service) {
         this.service = service;
     }
