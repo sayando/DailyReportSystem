@@ -32,7 +32,7 @@
   </form>
 
   <!-- 「この従業員情報を削除する」リンク -->
-  <p>
+  <p th:if="${employee.deleteFlag == 0}">
     <a th:href="@{/employee/{id}(id=${employee.id}, delete=true)}">この従業員情報を削除する</a>
   </p>
 

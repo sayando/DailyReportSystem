@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.PreRemove;
+
+import org.hibernate.annotations.Where;
 //import javax.validation.constraints.Email;
 //import javax.validation.constraints.Max;
 //import javax.validation.constraints.Min;
@@ -23,6 +25,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "employee")
+@Where(clause = "delete_flag = 0")
 public class Employee {
 
     /** 主キー。自動生成 */
@@ -44,9 +47,9 @@ public class Employee {
     private Integer age;
 
     /** 登録日時 */
-    private LocalDateTime created_at;
+    private LocalDateTime createdAt;
     
     /** 更新日時 */
-    private LocalDateTime updated_at;
+    private LocalDateTime updatedAt;
 
 }
