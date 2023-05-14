@@ -8,6 +8,6 @@ public class LogoutController {
     @PostMapping("/login")
     public String postLogout() {
         // ログイン画面にリダイレクト
-        return "redirect:employee/list";
+        return "list";
     }
 }
