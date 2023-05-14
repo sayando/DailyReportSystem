@@ -11,4 +11,11 @@ public class LoginController {
         // login.htmlに画面遷移
         return "login";
     }
+
+    /** トップページ画面を表示 */
+    @GetMapping("/")
+    public String getIndex() {
+        // list.htmlに画面遷移
+        return "employee/top";
+    }
 }

@@ -83,7 +83,8 @@ public class EmployeeController {
         // 一覧画面にリダイレクト
         return "redirect:/employee/list";
     }
-    /** Employee更新画面を表示 */
+
+    /* Employee更新画面を表示 
     @GetMapping("/update/{id}/")
     public String getUser(@PathVariable("id")  Integer id, Model model) {
         // Modelに登録
@@ -92,7 +93,7 @@ public class EmployeeController {
         return "employee/update";
     }
     
-    /** Employee更新画面を表示 */
+    /* Employee更新画面を表示 
     @GetMapping("/update/")
     public String getUpdate2( Model model) {
         // Modelに登録
@@ -100,12 +101,12 @@ public class EmployeeController {
         // Employee更新画面に遷移
         return "employee/update";
     }
-    /** Employee更新処理 */
+    /* Employee更新処理 
     @PostMapping("/update/{id}/")
     public String postUpdate(Employee employee) {
         // Employee登録
         service.saveEmployee(employee);
         // 一覧画面にリダイレクト
-        return "redirect:/employee/list";
-    }
+        return "redirect:/employee/list"; 
+    } */
 }
