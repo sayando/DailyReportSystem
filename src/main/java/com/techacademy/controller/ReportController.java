@@ -4,9 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.techacademy.entity.Employee;
 import com.techacademy.entity.Report;
 import com.techacademy.service.ReportService;
 
@@ -26,6 +28,16 @@ public class ReportController {
         model.addAttribute("reportlist", service.getReportList());
         // report/list.htmlに画面遷移
         return "report/list";
+    }
+    // ----- 詳細画面 -----
+    @GetMapping(value = { "/detail", "/detail/{id}/" })
+    public String getReport(@PathVariable(name = "id", required = false) Integer id, Model model) {
+        // idが指定されていたら検索結果、無ければ空のクラスを設定
+        Report report = id != null ? service.getReport(id) : new Report();
+        // Modelに登録
+        model.addAttribute("report", report);
+        // report/detail.htmlに画面遷移
+        return "report/detail";
     }
     /** Report登録画面を表示 */
     @GetMapping("/register")

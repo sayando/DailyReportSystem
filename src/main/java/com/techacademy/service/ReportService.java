@@ -26,4 +26,9 @@ public class ReportService {
     public Report saveUser(Report report) {
         return reportRepository.save(report);
     }
+
+    public Report getReport(Integer id) {
+        // TODO 自動生成されたメソッド・スタブ
+        return null;
+    }
 }
