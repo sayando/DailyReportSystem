@@ -2,23 +2,24 @@ package com.techacademy.service;
 
 import java.util.ArrayList;
 import java.util.Collection;
-//import org.springframework.security.core.GrantedAuthority;
-//import org.springframework.security.core.userdetails.UserDetails;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import com.techacademy.entity.Employee;
-/*
-public class EmployeeDetail implements EmployeeDetails {
+
+public class UserDetail implements UserDetails {
     private static final long serialVersionUID = 1L;
 
     private final Employee employee;
     private final Collection<? extends GrantedAuthority> authorities;
 
-    public EmployeeDetail(Employee employee) {
-        this.employee = employee;
+    public UserDetail(Employee user) {
+        this.employee = user;
         this.authorities = new ArrayList<GrantedAuthority>();
     }
 
-    public Employee getemployee() {
+    public Employee getUser() {
         return employee;
     }
 
@@ -34,7 +35,7 @@ public class EmployeeDetail implements EmployeeDetails {
 
     @Override
     public String getUsername() {
-        return employee.getAuthentication().getLoginUser();
+        return employee.getAuthentication().getCode();
     }
 
     @Override
@@ -59,5 +60,5 @@ public class EmployeeDetail implements EmployeeDetails {
     public boolean isEnabled() {
         // ユーザーが有効であればtrueを返す
         return true;
-    } 
-}*/
+    }
+}

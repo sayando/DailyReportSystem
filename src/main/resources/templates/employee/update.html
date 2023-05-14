@@ -15,11 +15,11 @@
   <p>氏名: <input type="text" th:value="${employee.name}"/></p>
 
   <!-- パスワード入力用テキストボックス -->
-  <p>パスワード: <input type="password" th:value="${employee.password}"/></p>
+  <p>パスワード: <input type="password" th:value="${employee.authentication.password}"/></p>
 
   <!-- 権限指定用ドロップダウンメニュー -->
   <p>権限: 
-    <select name="role" th:selected="${employee.role}">
+    <select name="role" th:selected="${employee.authentication.role}">
       <option value="1">管理者</option>
       <option value="2">一般ユーザー</option>
     </select>

@@ -11,8 +11,8 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class SecurityConfig {
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+   // @Autowired
+   // private PasswordEncoder passwordEncoder;
     /** 認証・認可設定 */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

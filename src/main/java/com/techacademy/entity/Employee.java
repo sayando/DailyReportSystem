@@ -41,7 +41,7 @@ public class Employee {
     private String name;
 
     /** 削除フラグ */
-    private Boolean delete_flag;
+    private Boolean deleteFlag;
 
     /** 年齢 */
     private Integer age;

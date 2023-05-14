@@ -1,4 +1,4 @@
-/*package com.techacademy.service;
+package com.techacademy.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,10 +36,10 @@ public class UserDetailService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String id) throws UsernameNotFoundException {
-        Optional<Authentication> authentication = authenticationRepository.findById(Integer.parseInt(id));
+        Optional<Authentication> authentication = authenticationRepository.findById(id);
 
         if (!authentication.isPresent()) {
-            throw new UsernameNotFoundException("User not found with id: " + id);
+            throw new UsernameNotFoundException("Employee not found with id: " + id);
         }
 
         Employee employee = authentication.get().getEmployee();
@@ -47,10 +47,8 @@ public class UserDetailService implements UserDetailsService {
         List<GrantedAuthority> authorities = new ArrayList<>();
         authorities.add(new SimpleGrantedAuthority(authentication.get().getRole().toString()));
 
-        return new org.springframework.security.core.userdetails.User(
-                employee.getId(),
-                passwordEncoder.encode(employee.getPassword()),
-                authorities
+        return new UserDetail(
+                employee
         );
     }
-}*/
+}
