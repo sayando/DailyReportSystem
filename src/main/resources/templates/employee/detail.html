@@ -8,15 +8,6 @@
     <h1>id:{id}の従業員情報 詳細ページ</h1>
     <form method="post" action="/employee/detail/{id}/" th:object="${employee}">
         <table>
-            <thead>
-                <tr>
-                    <th>社員番号</th>
-                    <th>氏名</th>
-                    <th>権限</th>
-                    <th>登録日時</th>
-                    <th>更新日時</th>
-                </tr>
-            </thead>
             <tbody>
                 <tr>
                     <th>社員番号</th>
@@ -28,7 +19,7 @@
                 </tr>
                 <tr>
                     <th>権限</th>
-                    <td th:text="${employee.authentication.role}"></td>
+                    <!-- <td th:text="${employee.authentication.role}"></td> -->
                 </tr>
                 <tr>
                     <th>登録日時</th>
@@ -41,7 +32,7 @@
             </tbody>
         </table>
     </form>
-    <a th:href="@{/employee/update/{employeeId}(employeeId=${id})}">この従業員情報を編集する</a>
-    <a th:href="@{/employee/list}">一覧に戻る</a>
+    <a th:href="@{/employee2/update/{id}(id=${employee.id})}">この従業員情報を編集する</a>
+    <a th:href="@{/employee2/list}">一覧に戻る</a>
 </body>
 </html>

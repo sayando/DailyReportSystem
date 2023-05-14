@@ -12,7 +12,7 @@ import com.techacademy.entity.Employee;
 import com.techacademy.service.EmployeeService;
 
 @Controller
-@RequestMapping("employee")
+@RequestMapping("employee2")
 public class EmployeeController {
     private final EmployeeService service;
 
@@ -41,7 +41,7 @@ public class EmployeeController {
     }
 
     // ----- 更新（追加） -----
-    /*@PostMapping("/detail")
+    @PostMapping("/detail")
     public String postCountry(@RequestParam("id") Integer id, @RequestParam("name") String name,
             @RequestParam("dalete_flag") int delete_flag, Model model) {
         // 更新（追加）
@@ -49,7 +49,7 @@ public class EmployeeController {
 
         // 一覧画面にリダイレクト
         return "redirect:/employee/list";
-    }*/
+    }
 
     // ----- 削除画面 -----
     @GetMapping("/delete")
@@ -84,7 +84,7 @@ public class EmployeeController {
         return "redirect:/employee/list";
     }
 
-    /* Employee更新画面を表示 
+    /* Employee更新画面を表示 */
     @GetMapping("/update/{id}/")
     public String getUser(@PathVariable("id")  Integer id, Model model) {
         // Modelに登録
@@ -100,13 +100,13 @@ public class EmployeeController {
         model.addAttribute("employee", service.getEmployee(1));
         // Employee更新画面に遷移
         return "employee/update";
-    }
-    /* Employee更新処理 
+    }　*/
+    /* Employee更新処理 */
     @PostMapping("/update/{id}/")
     public String postUpdate(Employee employee) {
         // Employee登録
         service.saveEmployee(employee);
         // 一覧画面にリダイレクト
         return "redirect:/employee/list"; 
-    } */
+    } 
 }
